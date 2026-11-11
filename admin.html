@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace boutique — MELORA CONCEPT</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0d0d11">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script src="assets/js/vendor/supabase.js"></script>
+  <script src="assets/js/supabase-config.js"></script>
+</head>
+<body>
+
+  <!-- ============ PORTE (compte cloud) ============ -->
+  <div class="wrap" id="gate">
+    <div class="brand-row">
+      <img src="assets/img/logo.png" alt="">
+      <span class="wordmark">Melora <em>Concept</em></span>
+      <span class="admin-tag">Espace boutique</span>
+    </div>
+    <h1>Entrer dans l'espace boutique</h1>
+    <p class="lead">Connectez-vous&nbsp;: vos articles partiront directement dans le cloud et s'afficheront aussitôt sur le site, pour tous les visiteurs.</p>
+
+    <div class="field" style="max-width:380px;margin:0 auto;">
+      <label for="f-email">E-mail</label>
+      <input type="email" id="f-email" autocomplete="username" placeholder="meloraconcept@gmail.com">
+    </div>
+    <div class="field" style="max-width:380px;margin:0 auto 1.4rem;">
+      <label for="f-pass">Mot de passe</label>
+      <input type="password" id="f-pass" autocomplete="current-password" placeholder="••••••••">
+    </div>
+    <button class="btn-gold" id="auth-btn">Se connecter</button>
+    <p class="gate-hint" id="auth-msg">Accès réservé à la boutique — aucun compte ne peut être créé ici.</p>
+  </div>
+
+  <!-- ============ OUTIL ============ -->
+  <div class="wrap" id="app" hidden>
+    <div class="brand-row">
+      <img src="assets/img/logo.png" alt="">
+      <span class="wordmark">Melora <em>Concept</em></span>
+      <span class="admin-tag">Espace boutique</span>
+    </div>
+
+    <h1>Publier un article</h1>
+    <p class="lead">Chaque article publié s'affiche <b>immédiatement</b> sur le site, dans l'univers choisi — aucun export, aucune manipulation de fichier.</p>
+
+    <form id="form-article">
+      <div class="field">
+        <label for="f-univers">Univers</label>
+        <select id="f-univers">
+          <option value="0">Beauté &amp; cosmétiques</option>
+          <option value="1">Parfumerie</option>
+          <option value="2">Bijouterie &amp; accessoires</option>
+          <option value="3">Mode &amp; prêt-à-porter</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-nom">Nom de l'article</label>
+        <input type="text" id="f-nom" maxlength="60" placeholder="Ex. Huile précieuse argan &amp; or" required>
+      </div>
+
+      <div class="field">
+        <label for="f-desc">Description courte <span style="opacity:.55;">(optionnel)</span></label>
+        <textarea id="f-desc" maxlength="220" placeholder="Une à deux phrases affichées sous l'article."></textarea>
+      </div>
+
+      <div class="two-col">
+        <div class="field">
+          <label for="f-prix">Prix <span style="opacity:.55;">(optionnel, affiché seulement s'il est renseigné)</span></label>
+          <input type="text" id="f-prix" maxlength="24" placeholder="Ex. 25 000 FCFA">
+        </div>
+        <div class="field">
+          <label for="f-photo">Photo <span style="opacity:.55;">(optionnel)</span></label>
+          <input type="file" id="f-photo" accept="image/*">
+          <p class="file-note">Redimensionnée puis envoyée dans le cloud (max 900&nbsp;px).</p>
+        </div>
+      </div>
+
+      <div class="preview" id="preview" hidden>
+        <img id="pv-img" alt="Aperçu de la photo">
+        <p class="pv-note" id="pv-note"></p>
+      </div>
+
+      <button type="submit" class="btn-gold" style="margin-top:1rem;">Publier l'article</button>
+      <p class="msg" id="msg-add"></p>
+    </form>
+
+    <h2>Catalogue en ligne</h2>
+    <div id="catalogue"></div>
+    <p class="msg" id="msg-list"></p>
+
+    <div class="help">
+      <h3>Comment ça marche</h3>
+      <ol>
+        <li><b>Publiez</b> vos articles (photo, nom, description, prix) — ils s'affichent immédiatement sur le site pour tout le monde.</li>
+        <li><b>« Marquer en rupture »</b> et <b>« Supprimer »</b> agissent aussi en direct.</li>
+        <li>Votre compte (e-mail + mot de passe) est le seul autorisé à publier.</li>
+      </ol>
+      <p class="warn">Ce compte est protégé par Supabase — bien plus solide qu'un simple code dans la page.</p>
+    </div>
+  </div>
+
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+/* ============================================================
+   MELORA — Espace boutique (admin)
+   Mêmes matériaux que le site : encre, or frappé, prose os.
+   Page-outil : la clarté d'abord, le monde ensuite.
+   ============================================================ */
+
+:root {
+  --ground:    #0d0d11;
+  --ground-2:  #101016;
+  --gold:      #e3c25c;
+  --gold-cta:  #d4af37;
+  --gold-ink:  #171204;
+  --bone:      #eae2d0;
+  --bone-dim:  #c9bfa9;
+  --ghost:     234, 226, 208;
+  --pile:      "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --prose:     "Spectral", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background:
+    radial-gradient(60% 30% at 50% 0%, rgba(212, 175, 55, .06), transparent 70%),
+    var(--ground);
+  color: var(--bone);
+  font-family: var(--prose);
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+::selection { background: var(--gold-cta); color: var(--gold-ink); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.wrap { width: min(860px, 92vw); margin-inline: auto; padding: 4.5rem 0 5rem; }
+
+.brand-row { display: flex; align-items: center; gap: .8rem; margin-bottom: 2.6rem; }
+.brand-row img { width: 46px; }
+.brand-row .wordmark {
+  font-family: var(--pile); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .22em; font-size: 1.05rem;
+}
+.brand-row .wordmark em { font-style: normal; color: var(--gold); letter-spacing: .3em; }
+.brand-row .admin-tag {
+  font-family: var(--pile); font-weight: 600; text-transform: uppercase;
+  letter-spacing: .18em; font-size: .72rem; color: var(--gold);
+  margin-left: auto;
+}
+
+h1 {
+  font-family: var(--pile); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1; letter-spacing: .03em;
+  color: var(--gold);
+  text-shadow: 0 0 26px rgba(227, 194, 92, .28);
+  margin-bottom: .6rem;
+}
+.lead { color: var(--bone-dim); max-width: 56ch; margin-bottom: 2.8rem; }
+
+/* ---------- porte ---------- */
+
+#gate { text-align: center; padding-top: 2rem; }
+#gate .lead { margin-inline: auto; }
+#gate input {
+  text-align: center; letter-spacing: .3em;
+}
+.gate-hint { font-size: .8rem; color: rgba(var(--ghost), .45); margin-top: 1rem; }
+
+/* ---------- formulaire ---------- */
+
+.oc-field label, .field-label {
+  display: block;
+  font-family: var(--pile); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .18em; font-size: .72rem; color: var(--gold);
+  margin-bottom: .5rem;
+}
+.field { margin-bottom: 1.5rem; }
+
+input[type="text"], input[type="password"], input[type="number"],
+select, textarea {
+  width: 100%;
+  background: var(--ground-2);
+  border: 1px solid rgba(var(--ghost), .18);
+  border-radius: 10px;
+  color: var(--bone);
+  font-family: var(--prose); font-size: 1rem;
+  padding: .8rem 1rem;
+  transition: border-color 1s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gold-cta);
+  outline: none;
+  transition: none;
+}
+textarea { min-height: 92px; resize: vertical; }
+select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px; background-repeat: no-repeat; }
+option { background: var(--ground-2); color: var(--bone); }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+@media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+input[type="file"] {
+  width: 100%;
+  background: var(--ground-2);
+  border: 1px dashed rgba(var(--ghost), .3);
+  border-radius: 10px;
+  color: var(--bone-dim);
+  font-family: var(--prose);
+  padding: .9rem 1rem;
+}
+input[type="file"]::file-selector-button {
+  background: var(--gold-cta); color: var(--gold-ink);
+  border: 0; border-radius: 99px;
+  font-family: var(--pile); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; font-size: .8rem;
+  padding: .5rem 1.2rem; margin-right: 1rem; cursor: pointer;
+}
+.file-note { font-size: .8rem; color: rgba(var(--ghost), .5); margin-top: .5rem; }
+
+.preview {
+  margin-top: .8rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.preview img {
+  width: 86px; height: 108px; object-fit: cover;
+  border-radius: 8px; background: var(--ground-2);
+}
+.preview .pv-note { font-size: .82rem; color: var(--bone-dim); }
+
+.btn-gold {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: var(--gold-cta); color: var(--gold-ink);
+  border: 0; border-radius: 99px; cursor: pointer;
+  font-family: var(--pile); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; font-size: .92rem;
+  padding: .85rem 2rem .75rem;
+  box-shadow: 0 6px 30px -8px rgba(212, 175, 55, .45);
+  transition: filter .25s, transform .15s;
+}
+.btn-gold:hover { filter: brightness(1.08); }
+.btn-gold:active { transform: translateY(2px); }
+.btn-line {
+  display: inline-block; background: none; border: 0; cursor: pointer;
+  font-family: var(--pile); font-weight: 600; text-transform: uppercase;
+  letter-spacing: .12em; font-size: .82rem;
+  color: rgba(var(--ghost), .5); padding: .5rem .2rem;
+}
+.btn-line:hover { color: var(--gold); }
+
+/* ---------- liste du catalogue ---------- */
+
+h2 {
+  font-family: var(--pile); font-weight: 600; text-transform: uppercase;
+  font-size: 1.5rem; letter-spacing: .04em;
+  margin: 3.2rem 0 1.4rem;
+}
+
+.cat-group-title {
+  font-family: var(--pile); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .22em; font-size: .74rem; color: var(--gold);
+  margin: 1.8rem 0 .9rem;
+}
+
+.cat-item {
+  display: flex; align-items: center; gap: 1rem;
+  padding: .8rem 0;
+  flex-wrap: wrap;
+}
+.cat-item + .cat-item { border-top: 1px solid rgba(var(--ghost), .08); }
+.cat-thumb {
+  width: 52px; height: 64px; flex: none;
+  object-fit: cover; border-radius: 6px; background: var(--ground-2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--pile); font-weight: 700; color: var(--gold);
+}
+.cat-info { flex: 1 1 160px; min-width: 0; }
+.cat-nom {
+  font-family: var(--pile); font-weight: 600; text-transform: uppercase;
+  letter-spacing: .06em; font-size: .98rem;
+}
+.cat-nom .rup { color: var(--gold-cta); }
+.cat-desc { font-size: .85rem; color: var(--bone-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cat-actions { display: flex; gap: .5rem; flex: 1 1 100%; margin-top: .2rem; }
+.cat-del, .cat-rup {
+  flex: 1; min-height: 46px;
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--pile); font-weight: 600; text-transform: uppercase;
+  letter-spacing: .1em; font-size: .76rem;
+  border-radius: 99px;
+}
+.cat-del { color: rgba(var(--ghost), .55); background: var(--ground-2); }
+.cat-del:hover { color: #e0685f; }
+.cat-rup { color: var(--gold-cta); background: var(--ground-2); }
+.cat-rup:hover { filter: brightness(1.15); }
+.cat-rup.on { background: var(--gold-cta); color: var(--gold-ink); }
+
+@media (min-width: 641px) {
+  .cat-actions { flex: 0 0 auto; margin-top: 0; }
+  .cat-del, .cat-rup { flex: none; padding: .5rem 1.1rem .4rem; }
+}
+
+.empty-cat { color: rgba(var(--ghost), .5); font-style: italic; padding: .6rem 0; }
+
+/* ---------- aide ---------- */
+
+.help {
+  margin-top: 3.2rem;
+  padding: 1.6rem 1.8rem;
+  background: var(--ground-2);
+  border-radius: 12px;
+}
+.help h3 {
+  font-family: var(--pile); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .16em; font-size: .82rem; color: var(--gold);
+  margin-bottom: .8rem;
+}
+.help ol { margin-left: 1.2rem; }
+.help li { margin-bottom: .5rem; font-size: .95rem; color: var(--bone-dim); }
+.help li b { color: var(--bone); font-weight: 400; }
+.help .warn { margin-top: 1rem; font-size: .85rem; color: rgba(var(--ghost), .55); font-style: italic; }
+
+.msg {
+  display: none;
+  margin-top: 1.2rem;
+  font-family: var(--pile); font-weight: 600; text-transform: uppercase;
+  letter-spacing: .1em; font-size: .85rem;
+  color: var(--gold);
+}
+.msg.show { display: block; }

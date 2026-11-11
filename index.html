@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MELORA CONCEPT — L'élégance à portée de mains</title>
+  <meta name="description" content="MELORA CONCEPT — l'élégance à portée de mains. Beauté & cosmétiques, parfumerie, bijouterie & accessoires, mode & prêt-à-porter. Écrivez-nous sur WhatsApp.">
+  <meta name="theme-color" content="#0d0d11" id="meta-theme">
+
+  <!-- apparence : appliquer le thème mémorisé avant le premier rendu -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("melora-theme") === "jour") {
+          document.documentElement.setAttribute("data-theme", "jour");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta property="og:title" content="MELORA CONCEPT — L'élégance à portée de mains">
+  <meta property="og:description" content="Quatre univers de luxe, une seule maison. L'élégance à portée de mains.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script src="assets/js/vendor/supabase.js"></script>
+  <script src="assets/js/supabase-config.js"></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#univers">Aller au contenu</a>
+
+  <!-- ============ ENTÊTE ============ -->
+  <header id="header">
+    <div class="header-in">
+      <a class="brand" href="#" aria-label="MELORA CONCEPT — retour en haut">
+        <img src="assets/img/logo.png" alt="" width="42" height="37">
+        <span class="wordmark">Melora<em>Concept</em></span>
+      </a>
+      <nav class="univers-nav" aria-label="Navigation principale">
+        <a href="#univers">Univers</a>
+        <a href="#maison">La Maison</a>
+        <a href="#experience">L'expérience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <div class="theme-toggle" role="group" aria-label="Apparence du site">
+          <button class="tt-btn" id="tt-nuit" type="button" aria-pressed="true" title="Nuit — encre &amp; or">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+            <span class="sr-only">Nuit</span>
+          </button>
+          <button class="tt-btn" id="tt-jour" type="button" aria-pressed="false" title="Jour — ivoire &amp; or">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"/></svg>
+            <span class="sr-only">Jour</span>
+          </button>
+        </div>
+        <a class="btn-gold header-cta js-wa" href="https://wa.me/2250574794969" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Écrire
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HÉROS : LA PILE ============ -->
+    <section class="hero" id="haut" aria-label="MELORA">
+      <div class="pile-scene wrap">
+        <button class="ghost-word g1 js-ghost" data-u="0" aria-label="Découvrir l'univers Beauté et cosmétiques">Beauté</button>
+        <button class="ghost-word g2 js-ghost" data-u="1" aria-label="Découvrir l'univers Parfumerie">Parfumerie</button>
+        <button class="ghost-word g3 js-ghost" data-u="2" aria-label="Découvrir l'univers Bijouterie et accessoires">Bijouterie</button>
+        <button class="ghost-word g4 js-ghost" data-u="3" aria-label="Découvrir l'univers Mode et prêt-à-porter">Mode</button>
+        <h1 class="struck-word">Melora<span class="concept">Concept</span></h1>
+      </div>
+      <div class="hero-foot wrap">
+        <p class="hero-line">L'élégance à <em>portée de mains</em>.</p>
+        <div class="hero-actions">
+          <a class="btn-gold js-wa" href="https://wa.me/2250574794969" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Écrire sur WhatsApp
+          </a>
+          <a class="btn-ghost" href="#univers">Découvrir les univers</a>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">Défiler</div>
+      </div>
+    </section>
+
+    <!-- ============ LES QUATRE UNIVERS ============ -->
+    <section id="univers" class="zone-lumiere">
+      <div class="wrap">
+        <h2 class="section-title">Les quatre <em>univers</em></h2>
+        <p class="univers-intro prose-dim">Tous présents, un seul frappé à la fois. Touchez un univers&nbsp;: il s'illumine, les autres s'effacent en arrière-plan.</p>
+
+        <div class="pile-nav" role="group" aria-label="Les univers MELORA">
+          <button class="universe-btn struck" data-u="0" aria-pressed="true"><span class="count" aria-hidden="true">I</span>Beauté &amp; cosmétiques</button>
+          <button class="universe-btn" data-u="1" aria-pressed="false"><span class="count" aria-hidden="true">II</span>Parfumerie</button>
+          <button class="universe-btn" data-u="2" aria-pressed="false"><span class="count" aria-hidden="true">III</span>Bijouterie &amp; accessoires</button>
+          <button class="universe-btn" data-u="3" aria-pressed="false"><span class="count" aria-hidden="true">IV</span>Mode &amp; prêt-à-porter</button>
+        </div>
+
+        <div class="readout" aria-live="polite">
+          <p class="ro-name" id="ro-name">Beauté &amp; cosmétiques</p>
+          <p class="ro-text" id="ro-text">Soins du visage et du corps, huiles précieuses et maquillage&nbsp;: une sélection pensée pour votre rituel quotidien.</p>
+          <p class="ro-tags" id="ro-tags">Soins · Teint · Éclat</p>
+        </div>
+
+        <!-- La vitrine : les articles de l'univers frappé (alimentée par assets/js/articles.js) -->
+        <div class="articles-block">
+          <p class="articles-label" id="articles-label">Articles — Beauté &amp; cosmétiques</p>
+          <div class="articles-grid" id="articles"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LA MAISON ============ -->
+    <section id="maison" class="zone-lumiere">
+      <div class="wrap maison-grid">
+        <div class="maison-logo">
+          <img src="assets/img/logo.png" alt="Emblème de la Maison MELORA" width="210" height="183">
+        </div>
+        <div class="maison-text">
+          <h2 class="section-title">La <em>Maison</em></h2>
+          <p style="margin-top:1.6rem">MELORA CONCEPT est né d'une conviction simple&nbsp;: le luxe véritable se reconnaît au détail. La maison réunit sous un même toit quatre univers qui se répondent — le soin, le sillage, le bijou, le vêtement.</p>
+          <p class="prose-dim">Chaque pièce est choisie avec exigence, présentée avec soin, et offerte dans son écrin. Notre rôle ne s'arrête pas à la vente&nbsp;: nous prenons le temps de conseiller, d'écouter, de trouver la pièce juste.</p>
+          <p class="pull-quote">«&nbsp;Chez MELORA, chaque détail compte.&nbsp;»</p>
+        </div>
+        <!-- À MODIFIER : adaptez librement les deux paragraphes ci-dessus à votre histoire. -->
+      </div>
+    </section>
+
+    <!-- ============ L'EXPÉRIENCE BOUTIQUE ============ -->
+    <section id="experience">
+      <div class="wrap">
+        <h2 class="section-title">L'expérience <em>boutique</em></h2>
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3><span>·</span> Conseil personnalisé</h3>
+            <p class="prose-dim">En boutique ou par WhatsApp, nous vous guidons vers la pièce qui vous ressemble — sans pression, avec patience.</p>
+          </div>
+          <div class="experience-item">
+            <h3><span>·</span> L'écrin MELORA</h3>
+            <p class="prose-dim">Chaque achat est préparé dans son écrin, prêt à être offert — ou à se faire plaisir.</p>
+          </div>
+          <div class="experience-item">
+            <h3><span>·</span> La pièce rare</h3>
+            <p class="prose-dim">Vous cherchez une référence précise&nbsp;? Dites-le-nous&nbsp;: nous mettons tout en œuvre pour la trouver.</p>
+          </div>
+        </div>
+        <!-- À MODIFIER : ajustez ces trois services selon votre réalité. -->
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2 class="big-line">Écrire à la Maison</h2>
+        <p class="sub prose-dim">Une question, un conseil, une recherche précise&nbsp;? Le message le plus simple reste WhatsApp&nbsp;: nous vous répondons en boutique.</p>
+        <a class="btn-gold js-wa" href="https://wa.me/2250574794969" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Écrire sur WhatsApp
+        </a>
+
+        <div class="contact-info">
+          <!-- À MODIFIER : vos coordonnées réelles (voir main.js, objet CONFIG). -->
+          <div class="ci"><b>Horaires</b><span data-cfg="horaires">Lun – Ven · 07h – 20h · Sam · 08h – 16h · Dim · 10h – 20h</span></div>
+          <div class="ci"><b>Instagram</b><a data-cfg-href="instagram" href="https://instagram.com/melora_concept" target="_blank" rel="noopener" data-cfg="instagram">@melora_concept</a></div>
+          <div class="ci"><b>TikTok</b><a data-cfg-href="tiktok" href="https://www.tiktok.com/@meloraconcept" target="_blank" rel="noopener" data-cfg="tiktok">@meloraconcept</a></div>
+          <div class="ci"><b>Facebook</b><a data-cfg-href="facebook" href="https://www.facebook.com/share/1DdRuaGE2f/" target="_blank" rel="noopener">MELORA CONCEPT</a></div>
+          <div class="ci"><b>E-mail</b><a data-cfg-href="email" href="mailto:meloraconcept@gmail.com">meloraconcept@gmail.com</a></div>
+          <div class="ci"><b>Boutique</b><span data-cfg="adresse">Rue H133, 333</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIED ============ -->
+  <footer>
+    <div class="f-brand">
+      <img src="assets/img/logo.png" alt="" width="40" height="35">
+      <span>Melora <em>Concept</em></span>
+    </div>
+    <p class="f-univers">Beauté · Parfum · Bijoux · Mode</p>
+    <p class="f-copy">© 2026 MELORA CONCEPT — L'élégance à portée de mains</p>
+    <!-- Espace réservé à la boutique : publier / modifier les articles -->
+    <a class="f-admin" href="admin.html">Espace boutique</a>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
